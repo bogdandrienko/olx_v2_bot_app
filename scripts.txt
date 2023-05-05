@@ -1,0 +1,31 @@
+1. Идея - телеграм бот для olx v2
+
+2. Стек технологий - django++(python)
+
+3. Функционал -
+3.1 Вывести все объявления по запросу в телеграм бота
+3.2 При нажатии на одно из объявлений - писать корзину / пересылать
+3.3 Публикация нового объявления через телеграм
+... (спросить нейросеть, посмотреть статьи/видео, подсмотреть у конкурентов)
+
+4. Создаём проект
+4.1. гитхаб-репозиторий
+4.2 виртуальное окружение для bot-api
+4.3 Создаём бот через BotFather (https://t.me/BotFather) и обязательно копируем токен
+
+(https://python-telegram-bot.org/)
+(https://www.youtube.com/watch?v=ExaQHffBE20&t=8321s&ab_channel=%D0%94%D0%B8%D0%B4%D0%B6%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D1%83%D0%B9%21)
+
+python -m venv env
+call env/scripts/activate
+pip install python-telegram-bot --upgrade
+pip install django Pillow django-grappelli
+pip freeze > requirements.txt
+
+django-admin startproject django_settings .
+django-admin startapp django_api
+python manage.py runserver 0.0.0.0:8000
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
